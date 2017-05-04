@@ -9,17 +9,19 @@ public class HAL {
     static int lastval;
 
     public static void main(String[] args) {
-        //SerialEmitter.init();
-        //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9, 0x0AA);
-        //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9,0xFF);
         HAL.init();
-        KBD.init();
-        while(true) {
+        SerialEmitter.init();
+        SerialEmitter.send(SerialEmitter.Destination.SLCD, 9, 0x155);
+        //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9,0xFF);
+
+        //KBD.init();
+        /*while(true) {
             char key=0;
             key=KBD.getKey();
             if (key!=0)
             System.out.println(key);
-        }
+        }*/
+
         }
     public static void init(){
         lastval=0x0;
