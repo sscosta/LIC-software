@@ -9,13 +9,24 @@ public class HAL {
     static int lastval;
 
     public static void main(String[] args) {
-        SerialEmitter.init();
-    }
+        //SerialEmitter.init();
+        //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9, 0x0AA);
+        //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9,0xFF);
+        HAL.init();
+        KBD.init();
+        while(true) {
+            char key=0;
+            key=KBD.getKey();
+            if (key!=0)
+            System.out.println(key);
+        }
+        }
     public static void init(){
+        lastval=0x0;
+        UsbPort.out(lastval);
     }
     // Retorna os valores dos bits representados por mask presentes no UsbPort
     public static int readBits(int mask) {
-        int s = UsbPort.in();
         return UsbPort.in()& mask;
     }
     // Retorna true se o bit tiver o valor lógico ‘1’
@@ -34,9 +45,7 @@ public class HAL {
     }
     // Escreve nos bits representados por mask o valor de value
     public static void writeBits(int mask, int value) {
-        UsbPort.out(value);
-        lastval= value;
+        lastval = (mask & value) | (~mask & lastval);
+        UsbPort.out(lastval);
     }
-
-
 }
