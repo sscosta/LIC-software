@@ -4,6 +4,7 @@ import isel.leic.UsbPort;
  * Created by Samuel on 11/04/2017.
  */
 
+
     public class KBD { // Ler teclas. Métodos retornam ‘0’..’9’,’A’..’F’ ou NONE.
         public static final char NONE = 0;
         public static char[] keyboard = {'1', '4','7','*','2','5','8','0','3','6',
