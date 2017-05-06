@@ -23,6 +23,18 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     }
     // Envia a sequência de iniciação para comunicação a 8 bits.
     public static void init() {
+        /*00001100* *
+        0000001110
+        0000000110
+        1001001000
+        1001001001
+        1001001001
+        0000000111
+        1000100000
+        1001001101
+        1001001111
+        00000100* *
+        00000100* **/
 
     }
     // Escreve um caráter na posição corrente.
@@ -41,6 +53,6 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     }
     // Envia comando para posicionar cursor (‘lin’:0..LINES-1 , ‘col’:0..COLS-1)
     public static void cursor(int lin, int col) {
-        
+
     }
 }
