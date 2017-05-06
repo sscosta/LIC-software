@@ -1,6 +1,4 @@
-/**
- * Created by Samuel on 27/04/2017.
- */
+
 public class SerialEmitter { // Envia tramas para os diferentes módulos Serial Receiver.
     public static enum Destination {SLCD,SSC};
     private static int SERIALEMITTERMASK=0x0F;
@@ -20,18 +18,18 @@ public class SerialEmitter { // Envia tramas para os diferentes módulos Serial 
     // Envia uma trama para o SerialReceiver identificado por addr, com a dimensão de size e os bits de ‘data’.
     public static void send(Destination addr, int size, int data) {
         int sdx;
-        int checksum = 0;
+        int parity = 0;
         HAL.clrBits(DESTINATION_MASKS[addr.ordinal()]);
         HAL.clrBits(SCLK_MASK|SDX_MASK);
         while (size > 0) {
             sdx = data % 2;
             data /= 2;
-            checksum ^= sdx;
+            parity ^= sdx;
             send(sdx);
            clock();
             size--;
         }
-        send(checksum);
+        send(parity);
         clock();
         HAL.setBits(DESTINATION_MASKS[addr.ordinal()]);
     }
@@ -41,8 +39,8 @@ public class SerialEmitter { // Envia tramas para os diferentes módulos Serial 
         HAL.clrBits(SCLK_MASK);
     }
     private static void send (int data){
-        if (data==1)
-            HAL.setBits(SDX_MASK);
-        else HAL.clrBits(SDX_MASK);
+        HAL.writeBits(SDX_MASK,data);
+        /*HAL.setBits(SDX_MASK);
+        HAL.clrBits(SDX_MASK);*/
     }
 }
