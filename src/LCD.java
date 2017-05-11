@@ -1,7 +1,8 @@
 
 public class LCD { // Escreve no LCD usando a interface a 8 bits.
 
-    private static int RS_MASK = 0x01;
+    //private static int RS_MASK = 0x01;
+    //private static int BYTE_MASK = 0xFF;
     private static final int LINES = 2, COLS = 16; // Dimensão do display.
     // Escreve um comando/dados no LCD
     private static void writeByte(boolean rs, int data){
@@ -23,19 +24,12 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     }
     // Envia a sequência de iniciação para comunicação a 8 bits.
     public static void init() {
-        /*00001100* *
-        0000001110
-        0000000110
-        1001001000
-        1001001001
-        1001001001
-        0000000111
-        1000100000
-        1001001101
-        1001001111
-        00000100* *
-        00000100* **/
-
+        //Function set
+        writeByte(false,0x38);
+        //Display on/off control
+        writeByte(false,0xE);
+        //Entry mode set
+        writeByte(false, 0x6);
     }
     // Escreve um caráter na posição corrente.
     public static void write(char c) {
