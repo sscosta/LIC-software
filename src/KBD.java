@@ -14,6 +14,7 @@ import java.awt.event.HierarchyEvent;
         private static int KBD_MASK = 0x0F;
         public static char[] keyboard = {'1', '4','7','*','2','5','8','0','3','6',
                             '9','#',0,0,0,0};
+    public static void main(String[] args) {}
         // Inicia a classe
         public static void init(){
 

@@ -11,7 +11,12 @@ public class HAL {
     public static void main(String[] args) {
         HAL.init();
         SerialEmitter.init();
-        SerialEmitter.send(SerialEmitter.Destination.SLCD, 9, 0x155);
+        LCD.init();
+        LCD.write("hello world");
+
+        //HAL.init();
+        //SerialEmitter.init();
+        //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9, 0x155);
         //SerialEmitter.send(SerialEmitter.Destination.SLCD, 9,0xFF);
 
         //KBD.init();
