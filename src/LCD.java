@@ -1,6 +1,5 @@
 import isel.leic.utils.Time;
 
-import java.lang.Thread;
 public class LCD { // Escreve no LCD usando a interface a 8 bits.
     //private static int RS_MASK = 0x01;
     //private static int BYTE_MASK = 0xFF;
