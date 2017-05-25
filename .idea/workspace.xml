@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c3cb4dea-cac2-4231-b15e-0f0a3bb4e5e7" name="Default" comment="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HAL.java" afterPath="$PROJECT_DIR$/src/HAL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KBD.java" afterPath="$PROJECT_DIR$/src/KBD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LCD.java" afterPath="$PROJECT_DIR$/src/LCD.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TUI.java" afterPath="$PROJECT_DIR$/src/TUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,11 +18,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+            <state relative-caret-position="473">
+              <caret line="65" column="21" lean-forward="false" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -71,13 +67,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HAL.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HAL.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/HAL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
+            <state relative-caret-position="375">
               <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding>
-                <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+                <element signature="e#0#1598#0" expanded="true" />
+                <element signature="e#862#863#0" expanded="true" />
+                <element signature="e#903#904#0" expanded="true" />
+                <element signature="e#1001#1002#0" expanded="true" />
+                <element signature="e#1041#1042#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -127,9 +127,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1612" />
-    <option name="height" value="1047" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -149,6 +150,20 @@
     <panes>
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIC-software" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LIC-software" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="usbport.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="LIC-software" />
@@ -600,12 +615,32 @@
       <option name="project" value="LOCAL" />
       <updated>1495743249603</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495743639976</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1495743639976</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495744415190</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1495744415190</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495744557140</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1495744557140</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1612" height="1047" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -616,12 +651,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932165" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28479382" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23560767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -728,7 +763,11 @@
         <state relative-caret-position="714">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -775,7 +814,11 @@
         <state relative-caret-position="714">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -800,7 +843,11 @@
         <state relative-caret-position="714">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -825,7 +872,11 @@
         <state relative-caret-position="748">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -857,7 +908,11 @@
         <state relative-caret-position="748">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -889,7 +944,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -914,7 +973,11 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1023,16 +1086,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SpaceInvaders.java" />
-    <entry file="file://$PROJECT_DIR$/src/HAL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <marker date="1495743349274" expanded="true" signature="1504:1595" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/KBD.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1060,9 +1113,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="63" column="38" lean-forward="false" selection-start-line="63" selection-start-column="38" selection-end-line="63" selection-end-column="38" />
+        <state relative-caret-position="473">
+          <caret line="65" column="21" lean-forward="false" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/HAL.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#1598#0" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
