@@ -7,7 +7,9 @@ public class SerialEmitter { // Envia tramas para os diferentes módulos Serial 
     private static int SDX_MASK = 0x1;
 
     private static int DESTINATION_MASKS[] = {0x8, 0x4};
+    public static void main (String [] args){
 
+    }
     // Inicia a classe
     public static void init() {
         for ( int m : DESTINATION_MASKS){
