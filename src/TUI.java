@@ -4,7 +4,7 @@ public class TUI {
     private static char RIGHT_ARROW = '6';
     private static char UP_ARROW = '2';
     private static char DOWN_ARROW = '0';
-    private static char DELETE_KEY = '9';
+    private static char DELETE_KEY = '*';
 
     public static void main(String[] args) {
         HAL.init();
@@ -56,12 +56,15 @@ public class TUI {
                     break;
 
                 case '9': //DELETE_KEY
-                    sarry[pos]=' ';
+                    if (pos==size-1)
+                        sarry[pos]=' ';
+                    else if (pos>0 && sarry[pos+1]==' ')
+                        sarry[pos]=' ';
                     break;
             }
         }
 
-        return sarry.toString();
+        return sarry.toString().trim();
 
     }
 }
