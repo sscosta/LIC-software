@@ -7,12 +7,26 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     public static void main(String[] args) {
 
         HAL.init();
-
         SerialEmitter.init();
         init();
-        write("0123456789ABCDEF");
-        cursor(1,5);
-        write("teste");
+        SoundGenerator.init();
+        char key;
+        while (true) {
+            //SoundGenerator.play(2);
+            //Time.sleep(500);
+            //SoundGenerator.stop();
+            //Time.sleep(500);
+            //writeDATA(KBD.getKey());
+            key = KBD.getKey();
+            if (key != 0) {
+                System.out.println(key);
+                LCD.write(key);
+            }
+        }
+        //write('A');
+        //write("0123456789ABCDEF");
+        //cursor(1,5);
+        //write("teste");
 
     }
     // Escreve um comando/dados no LCD
@@ -37,10 +51,12 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
 
     // Envia a sequência de iniciação para comunicação a 8 bits.
     public static void init() {
-            //Function set
+
+        //Function set
             writeCMD(0b00110000);
             //waits 5 milisec
-            Time.sleep(0b00110000);
+            Time.sleep(5);
+            writeCMD(0b00110000);
             //Display on/off control
             writeCMD(0b00110000);
             Time.sleep(1);
