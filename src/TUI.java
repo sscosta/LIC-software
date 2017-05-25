@@ -57,6 +57,7 @@ public class TUI {
 
                 case '9': //DELETE_KEY
                     sarry[pos]=' ';
+                    break;
             }
         }
 
