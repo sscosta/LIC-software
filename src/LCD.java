@@ -5,7 +5,9 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     //private static int BYTE_MASK = 0xFF;
     private static final int LINES = 2, COLS = 16; // Dimensão do display.
     public static void main(String[] args) {
+
         HAL.init();
+
         SerialEmitter.init();
         init();
         write("0123456789ABCDEF");
@@ -16,7 +18,7 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     // Escreve um comando/dados no LCD
     private static void writeByte(boolean rs, int data){
         data<<=1;
-        int RS = rs==false ?0:1;
+        int RS = !rs ?0:1;
         data+=RS;
             SerialEmitter.send(SerialEmitter.Destination.SLCD,9,data);
         Time.sleep(10);

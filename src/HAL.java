@@ -1,6 +1,4 @@
-/**
- * Created by Samuel on 06/04/2017.
- */
+
 
 /**
  *  virtualiza o acesso ao sistema usbport*/
@@ -12,7 +10,7 @@ public class HAL {
         HAL.init();
         SerialEmitter.init();
         LCD.init();
-        LCD.write("hello world");
+        //LCD.write("hello world");
 
         //HAL.init();
         //SerialEmitter.init();

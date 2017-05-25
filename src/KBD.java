@@ -2,9 +2,6 @@ import isel.leic.UsbPort;
 
 import java.awt.event.HierarchyEvent;
 
-/**
- * Created by Samuel on 11/04/2017.
- */
 
 
     public class KBD { // Ler teclas. Métodos retornam ‘0’..’9’,’A’..’F’ ou NONE.
@@ -14,7 +11,14 @@ import java.awt.event.HierarchyEvent;
         private static int KBD_MASK = 0x0F;
         public static char[] keyboard = {'1', '4','7','*','2','5','8','0','3','6',
                             '9','#',0,0,0,0};
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        char key;
+        while (true){
+            key =getKey();
+            if ( key != 0)
+                System.out.println(key);
+        }
+    }
         // Inicia a classe
         public static void init(){
 
