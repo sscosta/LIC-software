@@ -56,10 +56,14 @@ public class TUI {
                     break;
 
                 case '9': //DELETE_KEY
-                    if (pos==size-1)
-                        sarry[pos]=' ';
-                    else if (pos>0 && sarry[pos+1]==' ')
-                        sarry[pos]=' ';
+                    if (pos==size-1) {
+                        sarry[pos] = ' ';
+                        pos--;
+                    }
+                    else if (pos>0 && sarry[pos+1]==' ') {
+                        sarry[pos] = ' ';
+                        pos--;
+                    }
                     break;
             }
         }
