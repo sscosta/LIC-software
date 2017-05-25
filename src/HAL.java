@@ -7,9 +7,9 @@ public class HAL {
     static int lastval;
     public static boolean simul=true;
     public static void main(String[] args) {
-        HAL.init();
-        SerialEmitter.init();
-        LCD.init();
+        init();
+        readBits(8);
+
         //LCD.write("hello world");
 
         //HAL.init();
