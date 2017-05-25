@@ -1,43 +1,74 @@
-
 public class TUI {
-    char ENTER_KEY = '5';
-    char LEFT_ARROW = '4';
-    char RIGHT_ARROW = '6';
-    char UP_ARROW = '2';
-    char DOWN_ARROW = '0';
-    char DELETE_KEY = '9';
+    private static char ENTER_KEY = '5';
+    private static char LEFT_ARROW = '4';
+    private static char RIGHT_ARROW = '6';
+    private static char UP_ARROW = '2';
+    private static char DOWN_ARROW = '0';
+    private static char DELETE_KEY = '*';
 
     public static void main(String[] args) {
+        HAL.init();
+        SerialEmitter.init();
+        LCD.init();
+        KBD.init();
 
+        TUI t = new TUI();
+        String s =t.getString(5);
+
+        System.out.println(s);
 
     }
 
-    public String getString(int size) {
-        int i = 0;
-        String str = "";
-        while (KBD.getKey() != ENTER_KEY) {
 
-            char c = 'A';
-            char key = KBD.getKey();
-            if (key == UP_ARROW)
-                ++c;
-            if (key == DOWN_ARROW && c != 'A') {
-                --c;
-                if (key == RIGHT_ARROW && size - i != 0) {
-                    i++;
-                    str += c;
-                }
-                if (key == LEFT_ARROW && i > 0) {
-                    i--;
-                    str += c;
+    public String getString(int size){
+        char[] sarry =new char[size];
+        int pos =0;
+        for (char c: sarry) c=' ';
+        LCD.ClearLCD();
 
-                }
-                size--;
-                //setas
+        char keyPressed =0;
+        while (keyPressed!=ENTER_KEY) {
+            keyPressed=KBD.getKey();
 
+            switch(keyPressed) {
+                case '6': //RIGHT_ARROW
+                    if (pos<size-1) pos++;
+                    if (sarry[pos]<'A' || sarry[pos]>'Z')
+                        sarry[pos]='A';
+                    break;
+
+                case '4': //LEFT_ARROW
+                    if (pos>0) pos--;
+                    break;
+
+                case '2': //UP_ARROW
+                    if (sarry[pos]<'A' || sarry[pos]>='Z')
+                        sarry[pos]='A';
+                    else if (sarry[pos]<'Z')
+                        sarry[pos]++;
+                    break;
+
+                case '0': //DOWN_ARROW
+                    if (sarry[pos]<'A' || sarry[pos]>'Z')
+                        sarry[pos]='A';
+                    else if (sarry[pos]>'A')
+                        sarry[pos]--;
+                    break;
+
+                case '9': //DELETE_KEY
+                    if (pos==size-1) {
+                        sarry[pos] = ' ';
+                        pos--;
+                    }
+                    else if (pos>0 && sarry[pos+1]==' ') {
+                        sarry[pos] = ' ';
+                        pos--;
+                    }
+                    break;
             }
-            return str;
         }
-        return str;
+
+        return sarry.toString().trim();
+
     }
 }
