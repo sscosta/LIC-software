@@ -50,11 +50,12 @@ public class HAL {
     // Coloca os bits representados por mask no valor lógico ‘0’
     public static void clrBits(int mask){
         lastval = lastval & ~mask;
-        out(lastval);
+        UsbPort.out(lastval);
     }
     // Escreve nos bits representados por mask o valor de value
     public static void writeBits(int mask, int value) {
         lastval = (mask & value) | (~mask & lastval);
+        out(lastval);
         out(lastval);
     }
     private static int in (){
@@ -64,4 +65,8 @@ public class HAL {
     private static void out(int val){
         UsbPort.out(simul?~val:val);
     }
+    private static int in (){
+        return simul?~UsbPort.in():UsbPort.in();
+    }
+    private static void out(int val){UsbPort.out(simul?~val:val);}
 }
