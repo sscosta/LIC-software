@@ -21,6 +21,7 @@ public class SpaceInvaders {
     }
 
     private static void startMenu() {
+     /*
         tui.write(TITLE,false);
         tui.setCursorToLine(1);
         Timer t = new Timer();
@@ -35,6 +36,7 @@ public class SpaceInvaders {
 
         }
         //t.cancel();
+        */
     }
 
     private static boolean play() {
@@ -44,10 +46,11 @@ public class SpaceInvaders {
 
     // initiates the model
     public static void init(){
-        tui= new TUI();
+   /*     tui= new TUI();
         tui.init();
         CREDITS=0;
         highScores = LoadHighScores();
+        */
     }
 
     private static Scores LoadHighScores() {
