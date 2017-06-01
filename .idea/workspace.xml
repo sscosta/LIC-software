@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3cb4dea-cac2-4231-b15e-0f0a3bb4e5e7" name="Default" comment="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+    <list default="true" id="c3cb4dea-cac2-4231-b15e-0f0a3bb4e5e7" name="Default" comment="&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpaceInvaders.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/SpaceInvaders.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SIG_scores.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Simul.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/SpaceInvaders.simul" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SpaceInvaders.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/statistics.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LIC-software/HAL.class" afterPath="$PROJECT_DIR$/out/production/LIC-software/HAL.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/LIC-software/KBD.class" afterPath="$PROJECT_DIR$/out/production/LIC-software/KBD.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LIC-software.iml" afterPath="$PROJECT_DIR$/LIC-software.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/USB_PORT.properties" afterPath="$PROJECT_DIR$/USB_PORT.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/HAL.java" afterPath="$PROJECT_DIR$/src/HAL.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KBD.java" afterPath="$PROJECT_DIR$/src/KBD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LCD.java" afterPath="$PROJECT_DIR$/src/LCD.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TUI.java" afterPath="$PROJECT_DIR$/src/TUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,30 +33,16 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/TUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="65" column="21" lean-forward="false" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="LCD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LCD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="63">
+              <caret line="55" column="29" lean-forward="true" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
               <folding>
-                <element signature="e#730#731#0" expanded="true" />
-                <element signature="e#767#768#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#880#881#0" expanded="true" />
-                <element signature="e#1839#1840#0" expanded="true" />
-                <element signature="e#1873#1874#0" expanded="true" />
-                <element signature="e#2458#2459#0" expanded="true" />
-                <element signature="e#2494#2495#0" expanded="true" />
+                <element signature="e#1841#1842#0" expanded="true" />
+                <element signature="e#1875#1876#0" expanded="true" />
+                <element signature="e#2712#2713#0" expanded="true" />
+                <element signature="e#2751#2752#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -50,8 +51,8 @@
       <file leaf-file-name="SerialEmitter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SerialEmitter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -60,24 +61,56 @@
       <file leaf-file-name="KBD.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/KBD.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HAL.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TUI.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/TUI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-229">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LIC-software.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LIC-software.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsbPort.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/usbport.jar!/isel/leic/UsbPort.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1455">
+              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HAL.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/HAL.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="855">
+              <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding>
-                <element signature="e#0#1598#0" expanded="true" />
-                <element signature="e#862#863#0" expanded="true" />
-                <element signature="e#903#904#0" expanded="true" />
-                <element signature="e#1001#1002#0" expanded="true" />
-                <element signature="e#1041#1042#0" expanded="true" />
+                <element signature="e#860#861#0" expanded="true" />
+                <element signature="e#893#894#0" expanded="true" />
+                <element signature="e#992#993#0" expanded="true" />
+                <element signature="e#1032#1033#0" expanded="true" />
+                <element signature="e#1597#1598#0" expanded="true" />
+                <element signature="e#1652#1653#0" expanded="true" />
+                <element signature="e#1734#1735#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,11 +149,13 @@
         <option value="$PROJECT_DIR$/src/soundtest.java" />
         <option value="$PROJECT_DIR$/src/SoundGenerator.java" />
         <option value="$PROJECT_DIR$/src/SerialEmitter.java" />
-        <option value="$PROJECT_DIR$/usbport.jar!/isel/leic/UsbPort.class" />
         <option value="$PROJECT_DIR$/usbport.jar!/isel/leic/usbio/UsbPort.class" />
         <option value="$PROJECT_DIR$/src/SpaceInvaders.java" />
-        <option value="$PROJECT_DIR$/src/HAL.java" />
+        <option value="$PROJECT_DIR$/USB_PORT.properties" />
+        <option value="$PROJECT_DIR$/SpaceInvaders.simul" />
         <option value="$PROJECT_DIR$/src/KBD.java" />
+        <option value="$PROJECT_DIR$/usbport.jar!/isel/leic/UsbPort.class" />
+        <option value="$PROJECT_DIR$/src/HAL.java" />
         <option value="$PROJECT_DIR$/src/LCD.java" />
         <option value="$PROJECT_DIR$/src/TUI.java" />
       </list>
@@ -159,20 +194,6 @@
               <option name="myItemId" value="LIC-software" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="usbport.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIC-software" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LIC-software" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -190,9 +211,9 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,22 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.LCD">
-    <configuration default="false" name="SoundGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="SoundGenerator" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LIC-software" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.TUI">
     <configuration default="false" name="SpaceInvaders" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="SpaceInvaders" />
@@ -266,21 +272,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="false" name="SerialEmitter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="SerialEmitter" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="LIC-software" />
-      <envs />
-      <method />
-    </configuration>
     <configuration default="false" name="LCD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="LCD" />
@@ -293,6 +284,27 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="LIC-software" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="TUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="TUI" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="LIC-software" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="SpaceInvaders.jar" type="JarApplication" factoryName="JAR Application" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="JAR_PATH" value="$PROJECT_DIR$/SpaceInvaders.jar" />
       <envs />
       <method />
     </configuration>
@@ -501,19 +513,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.SoundGenerator" />
-      <item index="1" class="java.lang.String" itemvalue="Application.SpaceInvaders" />
-      <item index="2" class="java.lang.String" itemvalue="Application.KBD" />
-      <item index="3" class="java.lang.String" itemvalue="Application.SerialEmitter" />
-      <item index="4" class="java.lang.String" itemvalue="Application.LCD" />
+      <item index="0" class="java.lang.String" itemvalue="Application.SpaceInvaders" />
+      <item index="1" class="java.lang.String" itemvalue="Application.KBD" />
+      <item index="2" class="java.lang.String" itemvalue="Application.LCD" />
+      <item index="3" class="java.lang.String" itemvalue="Application.TUI" />
+      <item index="4" class="java.lang.String" itemvalue="JAR Application.SpaceInvaders.jar" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.LCD" />
-        <item index="1" class="java.lang.String" itemvalue="Application.SpaceInvaders" />
-        <item index="2" class="java.lang.String" itemvalue="Application.SoundGenerator" />
-        <item index="3" class="java.lang.String" itemvalue="Application.SerialEmitter" />
-        <item index="4" class="java.lang.String" itemvalue="Application.KBD" />
+        <item index="0" class="java.lang.String" itemvalue="Application.TUI" />
+        <item index="1" class="java.lang.String" itemvalue="JAR Application.SpaceInvaders.jar" />
+        <item index="2" class="java.lang.String" itemvalue="Application.LCD" />
+        <item index="3" class="java.lang.String" itemvalue="Application.KBD" />
+        <item index="4" class="java.lang.String" itemvalue="Application.SpaceInvaders" />
       </list>
     </recent_temporary>
   </component>
@@ -601,74 +613,68 @@
       <option name="project" value="LOCAL" />
       <updated>1495738421383</updated>
     </task>
-    <task id="LOCAL-00011" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
-      <created>1495743092470</created>
+    <task id="LOCAL-00011" summary="SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495739360342</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1495743092470</updated>
+      <updated>1495739360342</updated>
     </task>
-    <task id="LOCAL-00012" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
-      <created>1495743249603</created>
+    <task id="LOCAL-00012" summary="SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495743022256</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1495743249603</updated>
+      <updated>1495743022256</updated>
     </task>
-    <task id="LOCAL-00013" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
-      <created>1495743639976</created>
+    <task id="LOCAL-00013" summary="SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495743080472</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1495743639976</updated>
+      <updated>1495743080472</updated>
     </task>
-    <task id="LOCAL-00014" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
-      <created>1495744415190</created>
+    <task id="LOCAL-00014" summary="SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
+      <created>1495743142408</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1495744415190</updated>
+      <updated>1495743142408</updated>
     </task>
-    <task id="LOCAL-00015" summary="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL">
-      <created>1495744557140</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1495744557140</updated>
-    </task>
-    <option name="localTasksCounter" value="16" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3261105" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23560767" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24147122" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3911672" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39111593" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280757" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960477" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -681,8 +687,7 @@
     <MESSAGE value="primeiro teste software" />
     <MESSAGE value="Serial emitter e parte de lcd" />
     <MESSAGE value="SoundGenerator, Serial Emmitter, LCD, KBD e HAL" />
-    <MESSAGE value="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL" />
-    <option name="LAST_COMMIT_MESSAGE" value="Squashed commit of the following:&#10;&#10;commit 964181d14a47879ce541f441cdfac467676d8488&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 20:09:20 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 5c19df05e1a5801da8d9e32d7d8b3e6142ac9385&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 19:53:41 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL&#10;&#10;commit 615ba421ecef5b8cf7467664e3b241f5f2e25d53&#10;Author: sscosta &lt;43552@alunos.isel.ipl.pt&gt;&#10;Date:   Thu May 25 17:32:17 2017 +0100&#10;&#10;    SoundGenerator, Serial Emmitter, LCD, KBD e HAL" />
+    <option name="LAST_COMMIT_MESSAGE" value="SoundGenerator, Serial Emmitter, LCD, KBD e HAL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -735,14 +740,8 @@
           <properties />
           <option name="timeStamp" value="92" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/LCD.java</url>
-          <line>11</line>
-          <properties />
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="115" />
+      <option name="time" value="122" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -751,34 +750,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/LCD.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="40" column="35" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="40" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/HAL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/libraries/usbport.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="370">
@@ -814,11 +785,13 @@
         <state relative-caret-position="714">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -843,11 +816,13 @@
         <state relative-caret-position="714">
           <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -872,11 +847,13 @@
         <state relative-caret-position="748">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -908,11 +885,13 @@
         <state relative-caret-position="748">
           <caret line="53" column="0" lean-forward="false" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -944,11 +923,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -973,11 +954,13 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -994,13 +977,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
           <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/USB_PORT.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1046,13 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LIC-software.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/usbport.jar!/isel/leic/usbio/UsbPort.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
@@ -1070,66 +1039,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/usbport.jar!/isel/leic/UsbPort.class">
+    <entry file="file://$PROJECT_DIR$/USB_PORT.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SpaceInvaders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SpaceInvaders.simul">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SerialEmitter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SpaceInvaders.java" />
-    <entry file="file://$PROJECT_DIR$/src/KBD.java">
+    <entry file="jar://$PROJECT_DIR$/SpaceInvaders.jar!/isel/leic/simul/Simul.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="179">
+          <caret line="200" column="0" lean-forward="false" selection-start-line="200" selection-start-column="0" selection-end-line="200" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LCD.java">
+    <entry file="jar://$PROJECT_DIR$/SpaceInvaders.jar!/isel/leic/simul/UsbPort.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
-          <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding>
-            <element signature="e#730#731#0" expanded="true" />
-            <element signature="e#767#768#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#880#881#0" expanded="true" />
-            <element signature="e#1839#1840#0" expanded="true" />
-            <element signature="e#1873#1874#0" expanded="true" />
-            <element signature="e#2458#2459#0" expanded="true" />
-            <element signature="e#2494#2495#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="254">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/TUI.java">
+    <entry file="jar://$PROJECT_DIR$/usbport.jar!/isel/leic/UsbPort.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="65" column="21" lean-forward="false" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+        <state relative-caret-position="1455">
+          <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/HAL.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="855">
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding>
-            <element signature="e#0#1598#0" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#903#904#0" expanded="true" />
-            <element signature="e#1001#1002#0" expanded="true" />
-            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#893#894#0" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1597#1598#0" expanded="true" />
+            <element signature="e#1652#1653#0" expanded="true" />
+            <element signature="e#1734#1735#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/KBD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="18" lean-forward="false" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LIC-software.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="9" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="13" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LCD.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="55" column="29" lean-forward="true" selection-start-line="55" selection-start-column="29" selection-end-line="55" selection-end-column="29" />
+          <folding>
+            <element signature="e#1841#1842#0" expanded="true" />
+            <element signature="e#1875#1876#0" expanded="true" />
+            <element signature="e#2712#2713#0" expanded="true" />
+            <element signature="e#2751#2752#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

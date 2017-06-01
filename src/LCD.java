@@ -14,24 +14,6 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
         write("teste");
 
     }
-    // Escreve um comando/dados no LCD
-    private static void writeByte(boolean rs, int data){
-        data<<=1;
-        int RS = !rs ?0:1;
-        data+=RS;
-            SerialEmitter.send(SerialEmitter.Destination.SLCD,9,data);
-        Time.sleep(10);
-    }
-
-    // Escreve um comando no LCD
-    private static void writeCMD(int data) {
-        writeByte(false,data);
-    }
-
-    // Escreve um dado no LCD
-    private static void writeDATA(int data) {
-        writeByte(true,data);
-    }
 
     // Envia a sequência de iniciação para comunicação a 8 bits.
     public static void init() {
@@ -57,11 +39,38 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
         writeCMD(0b00001111);
     }
 
+    // Escreve um comando/dados no LCD
+    private static void writeByte(boolean rs, int data){
+        data<<=1;
+        int RS = !rs ?0:1;
+        data+=RS;
+            SerialEmitter.send(SerialEmitter.Destination.SLCD,9,data);
+        Time.sleep(10);
+    }
+
+    // Escreve um comando no LCD
+    private static void writeCMD(int data) {
+        writeByte(false,data);
+    }
+
+    // Escreve um dado no LCD
+    private static void writeDATA(int data) {
+        writeByte(true,data);
+    }
+
+
     // Escreve um caráter na posição corrente.
     public static void write(char c) {
         writeDATA((int) c);
     }
 
+    // Escreve um caráter na posição corrente.
+    public static void write(char c,int linFinal,int colFinal) {
+        cursorBlink(false);
+        writeDATA((int) c);
+        cursor(linFinal,colFinal);
+        cursorBlink(true);
+    }
     // Escreve uma string na posição corrente.
     public static void write(String txt) {
         int size=txt.length();
@@ -79,8 +88,11 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
             return;
         writeCMD(0x80+ (lin==1?0x40:0x0) +col );//0x80 - set cursor cmd; line 0= 0x0; line 1 =0x40;
     }
+    public static void cursorBlink(boolean blink) {
+        writeCMD(blink?0xF:0xC);
+    }
 
     public static void ClearLCD(){
-        writeCMD(0b00001000);
+        writeCMD(0b00000001);
     }
 }

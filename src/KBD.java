@@ -9,18 +9,29 @@ import java.awt.event.HierarchyEvent;
         private static int KVAL_MASK = 0x10;
         private static int ACK_MASK = 0x80;
         private static int KBD_MASK = 0x0F;
-        public static char[] keyboard = {'1', '4','7','*','2','5','8','0','3','6',
+        public static char[] keyboard_hard = {'1', '4','7','*','2','5','8','0','3','6',
                             '9','#',0,0,0,0};
+        public static char[] keyboard;
+        public static char[] keyboard_simul ={'1', '2','3','4','5','6','7','8','9','*',
+                '0','#',0,0,0,0};
     public static void main(String[] args) {
+        HAL.init();
+        KBD.init();
         char key;
         while (true){
             key =getKey();
             if ( key != 0)
                 System.out.println(key);
         }
+        //LCD.init();
+        //LCD.write(' ');
     }
         // Inicia a classe
         public static void init(){
+            if(HAL.simul)
+                keyboard = keyboard_simul;
+            else
+                keyboard= keyboard_hard;
 
         }
         // Retorna de imediato a tecla premida ou NONE se não há tecla premida.

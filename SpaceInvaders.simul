@@ -1,0 +1,57 @@
+## --- Additional packages with Hardware to Simulator
+package spaceinvaders.simul    # for Modules used in Space Invaders
+UsbPort = UsbPort
+
+# Generic modules to activate from Simulator
+kbd  = Keyboard("123456789*0#",4,3)
+lcd  = LCD
+m    = Switch ; "manut" ; setLabel("M")
+
+# Costume modules from spaceinvaders package
+kb  = KeyBuffer
+srl = SerialReceiverParity(9)
+dl  = LCD_Dispatcher
+srs = SerialReceiverParity(4)
+ca = CoinAcceptor ; "Acceptor"
+sc = SoundController
+sg = SoundGenerator ; "SoundGenerator"
+
+## --- Links ---
+# Manut
+m.out -> UsbPort.I7
+
+# Coin Acceptor
+UsbPort.O6 -> ca.accept
+ca.Coin -> UsbPort.I6
+
+# Key buffer and keyboard
+1 -> kbd.oe
+kbd.val -> kb.DAV
+kb.DAC -> kbd.ack
+kbd.K[0-3] -> kb.D[0-3]
+kb.K[0-3] -> UsbPort.I[0-3]
+kb.Dval -> UsbPort.I4
+UsbPort.O7 -> kb.ACK
+
+# SERIAL
+UsbPort.O3 -> srl./SS
+UsbPort.O2 -> srs./SS
+UsbPort.O0 -> srl.SDX, srs.SDX
+UsbPort.O1-> srl.SCLK, srs.SCLK
+
+# LCD
+dl.D[1-8] -> lcd.D[0-7]
+dl.D0 -> lcd.rs
+dl.WrL -> lcd.e
+dl.done -> srl.accept
+srl.DXval -> dl.Dval
+srl.D[0-8] -> dl.I[0-8]
+
+# Sound Generator
+srs.Dxval   -> sc.Dval
+srs.D[0-3]  -> sc.Din[0-3]
+sc.done     -> srs.accept
+sc.Play     -> sg.Play
+sc.sid[0-1] -> sg.sound[0-1]
+sc.vol[0-1] -> sg.volume[0-1]
+
