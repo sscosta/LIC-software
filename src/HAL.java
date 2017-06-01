@@ -6,6 +6,7 @@ import isel.leic.UsbPort;
 public class HAL {
     static int lastval;
     public static boolean simul=true;
+
     public static void main(String[] args) {
         init();
         readBits(8);
@@ -25,7 +26,8 @@ public class HAL {
             System.out.println(key);
         }*/
 
-        }
+    }
+
     public static void init(){
         lastval=0x0;
         out(lastval);
@@ -33,7 +35,7 @@ public class HAL {
 
     // Retorna os valores dos bits representados por mask presentes no UsbPort
     public static int readBits(int mask) {
-        return in()& mask;
+        return in() & mask;
     }
 
     // Retorna true se o bit tiver o valor lógico ‘1’
@@ -52,12 +54,14 @@ public class HAL {
         lastval = lastval & ~mask;
         UsbPort.out(lastval);
     }
+
     // Escreve nos bits representados por mask o valor de value
     public static void writeBits(int mask, int value) {
         lastval = (mask & value) | (~mask & lastval);
         out(lastval);
         out(lastval);
     }
+
     private static int in (){
         return simul?~UsbPort.in():UsbPort.in();
     }
@@ -65,8 +69,6 @@ public class HAL {
     private static void out(int val){
         UsbPort.out(simul?~val:val);
     }
-    private static int in (){
-        return simul?~UsbPort.in():UsbPort.in();
-    }
-    private static void out(int val){UsbPort.out(simul?~val:val);}
+
+
 }
