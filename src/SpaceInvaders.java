@@ -62,7 +62,7 @@ public class SpaceInvaders {
     private static Scores LoadHighScores() {
         return null;
     }
-    private void setHighScoresTimer(){
+    private void setHighScoresTimer(){}
 
 
 }

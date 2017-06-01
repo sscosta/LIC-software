@@ -12,7 +12,7 @@ public class TUI {
         LCD.init();
         KBD.init();
 
-        LCD.ClearLCD();
+       // LCD.ClearLCD();
         String s =TUI.getString(5,0,6);
 
         System.out.println(s);
