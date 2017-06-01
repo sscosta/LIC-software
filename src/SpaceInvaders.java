@@ -1,3 +1,4 @@
+import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -23,25 +24,24 @@ public class SpaceInvaders {
     private static void startMenu() {
         tui.write(TITLE,false);
         tui.setCursorToLine(1);
-        Score it = highScores.iterator();
+        Iterator<Score> it = highScores.iterator();
         Timer t = new Timer();
         t.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
                     while(it.hasNext()){
-                        it.getNext();
+                        it.next();
                     }
                 Score curr = (Score) it;
                 tui.write(curr.toString());
             }
         }, 1000,1000);
-    }
-
-        while(true){
+        while(CREDITS==0 && tui.getKey()!='*'){
 
         }
-        //t.cancel();
+        t.cancel();
     }
+}
 
     private static boolean play() {
     return false;
