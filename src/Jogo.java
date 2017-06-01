@@ -111,6 +111,7 @@ public class Jogo {
 
     public static void writeString(String a,int line, int column,int size)
     {
+        LCD.cursor(line,column);
         LCD.write(a);
 
     }
