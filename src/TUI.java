@@ -103,9 +103,9 @@ public class TUI {
     public char getKey(){
         return KBD.getKey();
     }
-    public void write(String str, boolean blinking){
-        if(!blinking)
-            LCD.WriteCMD
+    public void write(String str, boolean cursor){
+        int cmd =cursor?0xF:0xC;
+        LCD.writeCMD(cmd);
         LCD.write(str);
     }
     int writeFrom (int l,int col, String str){
@@ -121,5 +121,8 @@ public class TUI {
         LCD.cursor(l,c);
         LCD.write(c);
         return ret;
+    }
+    void setCursorToLine(int l){
+        LCD.cursor(l,0);
     }
 }
