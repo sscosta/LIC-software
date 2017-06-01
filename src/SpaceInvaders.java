@@ -1,19 +1,39 @@
-import isel.leic.utils.Time;
-
-import java.util.Random;
-
 public class SpaceInvaders {
-
+    private static int CREDITS;
+    private static int SCORE;
+    private static Scores highScores;
+    private static TUI tui;
     public static void main(String[] args) {
-        //HAL.init();
-        //SerialEmitter.init();
-        KBD.init();
-        LCD.init();
-        char key;
-        while(true) {
-            key = KBD.getKey();
-            if(key!=0)
-            LCD.write(key);
+        init();
+        startMenu();
+        while(!play()){
+
         }
+
+
+
+    //LOOP DO JOGO
+
+    }
+
+    private static void startMenu() {
+        String TITLE = " SPACE INVADERS ";
+    }
+
+    private static boolean play() {
+
+    }
+
+
+    // initiates the model
+    public static void init(){
+        tui= new TUI();
+        tui.init();
+        CREDITS=0;
+        highScores = LoadHighScores();
+    }
+
+    private static Scores LoadHighScores() {
+        return null;
     }
 }
