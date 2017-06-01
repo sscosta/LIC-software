@@ -12,6 +12,10 @@ public class Scores implements Iterable<Score> {
         scores.add(s);
     }
     public Iterator<Score> iterator() {
-        return iterator();
+        return scores.iterator();
     }
+    public int size(){
+        return scores.size();
+    }
+
 }

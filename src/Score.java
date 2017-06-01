@@ -6,7 +6,18 @@ public class Score {
         this.points = points;
         this.name = name;
     }
+
+    int getPointsLength(){
+        int aux = this.points;
+        int length =0;
+        while(aux>0){
+            aux/=10;
+            length++;
+        }
+        return length;
+    }
+
     public String toString(){
-        return ""+ points + " " + name;
+        return this.name + " " + this.points;
     }
 }
