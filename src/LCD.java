@@ -26,7 +26,7 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
         writeCMD(0b00110000);
         Time.sleep(1);
         //Entry mode set
-        writeCMD(0b00110000);
+        //writeCMD(0b00110000);
         //character font and number of lines
         writeCMD(0b00111000);
         //Sets entire display off, cursor on, and blinking of cursor position character (B)
