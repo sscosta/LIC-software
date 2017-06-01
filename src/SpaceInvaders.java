@@ -23,14 +23,20 @@ public class SpaceInvaders {
     private static void startMenu() {
         tui.write(TITLE,false);
         tui.setCursorToLine(1);
+        Score it = highScores.iterator();
         Timer t = new Timer();
         t.scheduleAtFixedRate(new TimerTask() {
-
             @Override
             public void run() {
-
+                    while(it.hasNext()){
+                        it.getNext();
+                    }
+                Score curr = (Score) it;
+                tui.write(curr.toString());
             }
         }, 1000,1000);
+    }
+
         while(true){
 
         }
@@ -53,4 +59,7 @@ public class SpaceInvaders {
     private static Scores LoadHighScores() {
         return null;
     }
+    private void setHighScoresTimer(){
+
+
 }

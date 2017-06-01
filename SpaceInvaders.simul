@@ -7,6 +7,7 @@ kbd  = Keyboard("123456789*0#",4,3)
 lcd  = LCD
 m    = Switch ; "manut" ; setLabel("M")
 
+ 
 # Costume modules from spaceinvaders package
 kb  = KeyBuffer
 srl = SerialReceiverParity(9)
