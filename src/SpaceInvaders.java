@@ -10,10 +10,11 @@ public class SpaceInvaders {
     private static TUI tui;
     public static void main(String[] args) {
         init();
+        Jogo j = new Jogo();
         startMenu();
-        while(!play()){
+        //while(!play()){
 
-        }
+        //}
 
 
 
@@ -33,7 +34,7 @@ public class SpaceInvaders {
                         it.next();
                     }
                 Score curr = (Score) it;
-                tui.write(curr.toString());
+                //tui.write(curr.toString());
             }
         }, 1000,1000);
         while(CREDITS==0 && tui.getKey()!='*'){
@@ -41,7 +42,7 @@ public class SpaceInvaders {
         }
         t.cancel();
     }
-}
+
 
     private static boolean play() {
     return false;
@@ -54,6 +55,7 @@ public class SpaceInvaders {
         tui.init();
         CREDITS=0;
         highScores = LoadHighScores();
+        KBD.init();
     }
 
     private static Scores LoadHighScores() {
@@ -62,4 +64,4 @@ public class SpaceInvaders {
     private void setHighScoresTimer(){
 
 
-}
+}}

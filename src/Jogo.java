@@ -13,7 +13,7 @@ public class Jogo {
     private static int upper_alien_number = 9;
     private static int lower_alien_number = 0;
     private static int numberOfAliens = 1;
-    private static char alien_incoming = (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number);
+    private static char alien_incoming = (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number+48);
     private static int columnStart = 16;
     private static char [] writeInFirstLineScreen = {missile,bug,0,0,0,0,0,0,0,0,0,0,0,0,0,alien_incoming};
     private static char [] alienTrain = {0,0,0,0,0,0,0,0,0,0,0,0,0,alien_incoming};
@@ -60,14 +60,21 @@ public class Jogo {
 
     private static void shoot(char key) {
 
-        for (int i = 0; i <writeInFirstLineScreen.length ; i++) {
+        for (int i = 2; i <writeInFirstLineScreen.length ; i++) {
             if(writeInFirstLineScreen[i] != 0)
                 if(missile == writeInFirstLineScreen[i]) {
                     writeInFirstLineScreen[i] = 0;
+                    alienTrain[i-2] = 0;
+                    updateViewAfterShoot();
                     updateScore();
                     break;
                 }
         }
+    }
+
+    private static void updateViewAfterShoot() {
+        writeString(new String(writeInFirstLineScreen),0,0,columnStart);
+
     }
 
     private static void updateScore() {
@@ -76,7 +83,8 @@ public class Jogo {
     }
 
     private static void updateView(char key) {
-        missile = key;
+        missile =(char) (key);
+        writeInFirstLineScreen[0] = missile;
         writeString(new String(writeInFirstLineScreen),0,0,columnStart);
     }
 
@@ -85,16 +93,17 @@ public class Jogo {
     {
 
         for (int i = writeInFirstLineScreen.length-1; i >1 ; i--) {
-            writeInFirstLineScreen[i] |= alienTrain[i];
+            writeInFirstLineScreen[i] = alienTrain[i-2];
         }
     }
 
     public static void addAlienToArray(char[] train)
     {
         alien_incoming = generateAlienNumber();
-        for (int i = 0; i <train.length; i--) {
-            if(i < train.length-1 && train[i+1] != 0){
-                train[i] = train[i+1];
+        for (int i = 0; i <train.length; i++) {
+            if(i < train.length-1){
+                if(train[i+1] != 0)
+                    train[i] = train[i+1];
             }
             if(i == train.length-1)
                 train[i] = alien_incoming;
@@ -106,7 +115,7 @@ public class Jogo {
 
     public static char generateAlienNumber()
     {
-        return (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number);
+        return (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number+48);
     }
 
     public static void writeString(String a,int line, int column,int size)
