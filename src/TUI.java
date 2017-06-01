@@ -12,16 +12,15 @@ public class TUI {
         LCD.init();
         KBD.init();
 
-        TUI t = new TUI();
         LCD.ClearLCD();
-        String s =t.getString(5,0,6);
+        String s =TUI.getString(5,0,6);
 
         System.out.println(s);
 
     }
 
 
-    public String getString(int size,int linStart, int colStart){
+    public static String getString(int size,int linStart, int colStart){
         char[] sarry =new char[size];
 
         int pos =0;

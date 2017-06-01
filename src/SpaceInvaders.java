@@ -21,14 +21,13 @@ public class SpaceInvaders {
     }
 
     private static boolean play() {
-
+return false;
     }
 
 
     // initiates the model
     public static void init(){
-        tui= new TUI();
-        tui.init();
+
         CREDITS=0;
         highScores = LoadHighScores();
     }
