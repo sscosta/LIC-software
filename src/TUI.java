@@ -34,59 +34,58 @@ public class TUI {
         while (keyPressed!=ENTER_KEY) {
             keyPressed=KBD.getKey();
 
-            if (keyPressed>0) {
-                switch (keyPressed) {
-                    case RIGHT_ARROW:
-                        if (pos < size - 1) {
-                            pos++;
-                            LCD.cursor(linStart, colStart + pos);
-                        }
-                        if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
-                            sarry[pos] = 'A';
-                            LCD.write(sarry[pos], linStart, colStart + pos);
-                        }
-                        break;
+            switch (keyPressed) {
+                case 0:
+                    break;
+                case RIGHT_ARROW:
+                    if (pos < size - 1) {
+                        pos++;
+                        LCD.cursor(linStart, colStart + pos);
+                    }
+                    if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
+                        sarry[pos] = 'A';
+                        LCD.write(sarry[pos], linStart, colStart + pos);
+                    }
+                    break;
 
-                    case LEFT_ARROW:
-                        if (pos > 0) {
-                            pos--;
-                            LCD.cursor(linStart, colStart + pos);
-                        }
-                        break;
+                case LEFT_ARROW:
+                    if (pos > 0) {
+                        pos--;
+                        LCD.cursor(linStart, colStart + pos);
+                    }
+                    break;
 
-                    case UP_ARROW:
-                        if (sarry[pos] < 'A' || sarry[pos] >= 'Z') {
-                            sarry[pos] = 'A';
-                            LCD.write(sarry[pos], linStart, colStart + pos);
-                        } else if (sarry[pos] < 'Z') {
-                            sarry[pos]++;
-                            LCD.write(sarry[pos], linStart, colStart + pos);
-                        }
-                        break;
+                case UP_ARROW:
+                    if (sarry[pos] < 'A' || sarry[pos] >= 'Z') {
+                        sarry[pos] = 'A';
+                        LCD.write(sarry[pos], linStart, colStart + pos);
+                    } else if (sarry[pos] < 'Z') {
+                        sarry[pos]++;
+                        LCD.write(sarry[pos], linStart, colStart + pos);
+                    }
+                    break;
 
-                    case DOWN_ARROW:
-                        if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
-                            sarry[pos] = 'A';
-                            LCD.write(sarry[pos], linStart, colStart + pos);
-                        } else if (sarry[pos] == 'A') {
-                            sarry[pos] = 'Z';
-                            LCD.write(sarry[pos], linStart, colStart + pos);
-                        } else if (sarry[pos] > 'A') {
-                            sarry[pos]--;
-                            LCD.write(sarry[pos], linStart, colStart + pos);
-                        }
-                        break;
+                case DOWN_ARROW:
+                    if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
+                        sarry[pos] = 'A';
+                        LCD.write(sarry[pos], linStart, colStart + pos);
+                    } else if (sarry[pos] == 'A') {
+                        sarry[pos] = 'Z';
+                        LCD.write(sarry[pos], linStart, colStart + pos);
+                    } else if (sarry[pos] > 'A') {
+                        sarry[pos]--;
+                        LCD.write(sarry[pos], linStart, colStart + pos);
+                    }
+                    break;
 
-                    case DELETE_KEY:
-                        if (pos == size - 1 || (pos > 0 && sarry[pos + 1] == 0)) {
-                            sarry[pos] = 0;
-                            LCD.write(sarry[pos], linStart, colStart + (--pos));
-                        }
-                        break;
-                }
+                case DELETE_KEY:
+                    if (pos == size - 1 || (pos > 0 && sarry[pos + 1] == 0)) {
+                        sarry[pos] = 0;
+                        LCD.write(sarry[pos], linStart, colStart + (--pos));
+                    }
+                    break;
             }
         }
-
 
         return String.valueOf( sarry).trim();
 
