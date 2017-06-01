@@ -24,7 +24,7 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
     }
 
     // Escreve um comando no LCD
-    private static void writeCMD(int data) {
+    public static void writeCMD(int data) {
         writeByte(false,data);
     }
 
