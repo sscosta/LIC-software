@@ -4,11 +4,11 @@ import java.util.*;
 /**
  * Created by pedro on 2017-06-01.
  */
-public class HighScores {
+public class HighScores implements Iterable<HighScore> {
     final private String HIGHSCORESFILENAME ="SIG_scores.txt";
     final private int MAXHIGHSCORES=5;
 
-    public ArrayList<HighScore> table;
+    private ArrayList<HighScore> highscores;
 
     public static void main(String[] args) {
         HighScores hsc = new HighScores();
@@ -18,31 +18,29 @@ public class HighScores {
         hsc.AddScore("PEDRO",989);
         hsc.AddScore("PEDRO",989);
 
-        for (HighScore hs: hsc.table) {
+        for (HighScore hs: hsc.highscores) {
             System.out.println(hs.toString());
         }
         hsc.save();
     }
 
-
-
-
-    public  HighScores() {
-        this.table = new ArrayList<HighScore>();
+    public HighScores() {
+        super();
+        this.highscores = new ArrayList<HighScore>();
     }
 
     public void AddScore(String name,int score){
-       this.table.add((new HighScore(name,score)));
+       this.highscores.add((new HighScore(name,score)));
 
         this.SortScores();
 
-        while (this.table.size() >MAXHIGHSCORES) {
-            this.table.remove(MAXHIGHSCORES);
+        while (this.highscores.size() >MAXHIGHSCORES) {
+            this.highscores.remove(MAXHIGHSCORES);
         }
     }
 
     private void SortScores(){
-        Collections.sort(this.table, new Comparator<HighScore>() {
+        Collections.sort(this.highscores, new Comparator<HighScore>() {
             @Override
             public int compare(HighScore hs2, HighScore hs1)
             {
@@ -52,7 +50,7 @@ public class HighScores {
     }
 
     public void load(){
-        this.table.clear();
+        this.highscores.clear();
         Scanner in = null;
 
         try {
@@ -61,7 +59,7 @@ public class HighScores {
             in = new Scanner(new FileInputStream(HIGHSCORESFILENAME));
             while (in.hasNextLine()) {
                 hs=HighScore.FromText(in.nextLine());
-                if (hs != null) this.table.add(hs);
+                if (hs != null) this.highscores.add(hs);
             }
 
         } catch (FileNotFoundException | InputMismatchException e) {
@@ -77,7 +75,7 @@ public class HighScores {
 
         try {
             out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("_"+HIGHSCORESFILENAME)));
-            for (HighScore hs: this.table) {
+            for (HighScore hs: this.highscores) {
                 out.write(hs.toString());
                 out.newLine();
             }
@@ -94,5 +92,10 @@ public class HighScores {
             System.out.println("Error saving file \""+HIGHSCORESFILENAME+"\":\n"+e.getMessage());
         }
 
+    }
+
+    @Override
+    public Iterator<HighScore> iterator() {
+        return this.highscores.iterator();
     }
 }
