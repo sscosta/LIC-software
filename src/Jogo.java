@@ -30,7 +30,7 @@ public class Jogo {
     public static void init()
     {
 
-        LCD.cursor(0,0);
+        LCD.SetcursorPosition(0,0);
         writeString(new String(writeInFirstLineScreen),0,0,columnStart);
         writeString(writeInSecondLineScreen,1,0,columnStart);
         Time.sleep(2000);
@@ -120,7 +120,7 @@ public class Jogo {
 
     public static void writeString(String a,int line, int column,int size)
     {
-        LCD.cursor(line,column);
+        LCD.SetcursorPosition(line,column);
         LCD.write(a);
 
     }
