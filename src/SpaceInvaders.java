@@ -46,7 +46,7 @@ public class SpaceInvaders {
                 tui.write(" GAME         $" + CREDITS,false);
                 Time.sleep(1000);
             }
-            if ((keyPressed!=0 && keyPressed!='*')|| (Time.getTimeInMillis()-beg)%1000==0)
+            if ((keyPressed!=0 && keyPressed!='*')|| (Time.getTimeInMillis()-beg)%1500==0)
                 ordinal = showNextHighscore(it,ordinal);
         }
     }
