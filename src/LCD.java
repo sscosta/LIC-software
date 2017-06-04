@@ -1,7 +1,7 @@
 import isel.leic.utils.Time;
 
 public class LCD { // Escreve no LCD usando a interface a 8 bits.
-    private static final int LINES = 2, COLS = 16; // Dimensão do display.
+    public static final int LINES = 2, COLS = 16; // Dimensão do display.
     private static final String GUNSHIP ="\u0000";
     private static final String HUMANSHIP ="\u0001";
     private static final String ALIANSHIP ="\u0002";
@@ -100,18 +100,10 @@ cursorBlink(false);
     }
     // Escreve uma string na posição corrente.
     public static void write(String txt) {
-        for (int i=0 ; i<txt.length();i++){
+        for (int i = 0; i < txt.length(); i++) {
             write(txt.charAt(i));
         }
-/*
-        int size=txt.length();
-        int i= 0;
-        while (size!=0){
-            write(txt.charAt(i));
-            i++;
-            size--;
-       }
-*/     }
+    }
 
     // Envia comando para posicionar cursor (‘lin’:0..LINES-1 , ‘col’:0..COLS-1)
     public static void cursor(int lin, int col) {

@@ -12,26 +12,34 @@ public class TUI {
 
     }
 
-    private static char ENTER_KEY = '5';
+    private static final char ENTER_KEY = '5';
     private static final char LEFT_ARROW = '4';
     private static final char RIGHT_ARROW = '6';
     private static final char UP_ARROW = '2';
     private static final char DOWN_ARROW = '8';
     private static final char DELETE_KEY = '*';
 
-    public static String getString(int size,int linStart, int colStart){
-        char[] sarry =new char[size];
+    public void init(){
+        HAL.init();
+        SerialEmitter.init();
+        SoundGenerator.init();
+        LCD.init();
+        LCD.cursor(0,0);
+    }
 
-        int pos =0;
-        LCD.cursor(linStart,colStart+pos);
+    public static String getString(int size,int linStart, int colStart) {
+        char[] sarry = new char[size];
 
-        sarry[0]='A';
-        LCD.writeFinalPos(sarry[0],linStart,colStart+pos);
+        int pos = 0;
+        LCD.cursor(linStart, colStart + pos);
 
-        char keyPressed =0;
+        sarry[0] = 'A';
+        LCD.writeFinalPos(sarry[0], linStart, colStart + pos);
 
-        while (keyPressed!=ENTER_KEY) {
-            keyPressed=KBD.getKey();
+        char keyPressed = 0;
+
+        while (keyPressed != ENTER_KEY) {
+            keyPressed = KBD.getKey();
 
             switch (keyPressed) {
                 case 0:
@@ -86,15 +94,10 @@ public class TUI {
             }
         }
 
-        return String.valueOf( sarry).trim();
-
-    public void init(){
-        HAL.init();
-        SerialEmitter.init();
-        SoundGenerator.init();
-        LCD.init();
-        LCD.cursor(0,0);
+        return String.valueOf(sarry).trim();
     }
+
+
 
     public char getRandomNum() {
         return (char) ((int)(Math.random() * 9)+48);
@@ -129,14 +132,14 @@ public class TUI {
         LCD.cursor(line,col);
         LCD.write(text);
     }
-    void write (int ordinal,Score sc,boolean cursor){
+    void write (int ordinal,HighScore sc,boolean cursor){
         String str = ordinal/10==0?"0":"";
-        str+=ordinal+"-"+sc.getName();
-        int n = MAX_COLS - str.length();
+        str+=ordinal+"-"+sc.GetName();
+        int n = LCD.COLS - str.length();
         write(str,cursor);
     }
+
     void enableBlinkingCursor(boolean blink){
-        int cmd =blink?0xF:0xC;
-        LCD.writeCMD(cmd);
+        LCD.cursorBlink(blink);
     }
 }
