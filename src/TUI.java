@@ -13,6 +13,7 @@ public class TUI {
         LCD.init();
         KBD.init();
         TUI t = new TUI();
+
         String s =t.getString(5);
         System.out.println(s);
     }
