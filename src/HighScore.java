@@ -22,10 +22,10 @@ public class HighScore  {
 
     public static HighScore FromText(String text){
         if (!text.isEmpty() ) {
-            String[] split;
-            split = text.split(";");
-            if (split.length == 2) {
-                return new HighScore(split[1], Integer.parseInt(split[0]));
+            String[] splitedText;
+            splitedText = text.split(";");
+            if (splitedText.length == 2) {
+                return new HighScore(splitedText[1], Integer.parseInt(splitedText[0]));
             }
         }
         return null;

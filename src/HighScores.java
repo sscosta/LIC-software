@@ -5,11 +5,6 @@ import java.util.*;
  * Created by pedro on 2017-06-01.
  */
 public class HighScores implements Iterable<HighScore> {
-    final private String HIGHSCORESFILENAME ="SIG_scores.txt";
-    final private int MAXHIGHSCORES=5;
-
-    private ArrayList<HighScore> highscores;
-
     public static void main(String[] args) {
         HighScores hsc = new HighScores();
 
@@ -24,13 +19,18 @@ public class HighScores implements Iterable<HighScore> {
         hsc.save();
     }
 
+    final private String HIGHSCORESFILENAME ="SIG_scores.txt";
+    final private int MAXHIGHSCORES=5;
+
+    private ArrayList<HighScore> highscores;
+
     public HighScores() {
         super();
         this.highscores = new ArrayList<HighScore>();
     }
 
     public void AddScore(String name,int score){
-       this.highscores.add((new HighScore(name,score)));
+       this.highscores.add(new HighScore(name,score));
 
         this.SortScores();
 
@@ -98,4 +98,12 @@ public class HighScores implements Iterable<HighScore> {
     public Iterator<HighScore> iterator() {
         return this.highscores.iterator();
     }
+
+    public boolean IsNewScoreHighScore(int score){
+        if (this.highscores.size()>0) {
+            return score >= this.highscores.get(this.highscores.size() - 1).GetScore();
+        }
+        return false;
+    }
+
 }
