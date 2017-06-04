@@ -27,7 +27,6 @@ public class SpaceInvaders {
 
     private static void startMenu() {
         char keyPressed=0;
-        Iterator<Score> it = highScores.iterator();
         tui.write(TITLE,0,0, false);
         highScores.add(new Score(12, "ABC"));
         highScores.add(new Score(4, "fFC"));
@@ -37,8 +36,9 @@ public class SpaceInvaders {
         tui.write("$ "+CREDITS,1,16-2 -CREDITS.length(),false);
         Time.sleep(2000);
 
-        int ordinal=0;
-
+        int beg = (int) Time.getTimeInMillis();
+        Iterator<Score> it = highScores.iterator();
+        int ordinal =0;
         while(CREDITS=="0" && (keyPressed==0 || keyPressed!='*') ) {
             keyPressed= tui.getKey();
             if (COIN_INSERTED){
@@ -46,34 +46,26 @@ public class SpaceInvaders {
                 tui.write(" GAME         $" + CREDITS,false);
                 Time.sleep(1000);
             }
-            if (keyPressed!=0 && keyPressed!='*')
-                showNextHighscore(it,ordinal);
-            Timer t = new Timer();
-            t.scheduleAtFixedRate(new TimerTask() {
-                @Override
-                public void run() {
-                    showNextHighscore(it,ordinal);
-                }
-            }, 1000, 2000);
+            if ((keyPressed!=0 && keyPressed!='*')|| (Time.getTimeInMillis()-beg)%1000==0)
+                ordinal = showNextHighscore(it,ordinal);
         }
-
     }
 
     private static boolean play() {
     return false;
     }
-    static void showNextHighscore(Iterator<Score> it, int ord){
-
+    static int showNextHighscore(Iterator<Score> it, int ordinal){
         if (it.hasNext()) {
-            ++ord;
+            ++ordinal;
             Score curr = it.next();
             tui.setCursorToLine(1);
-            tui.write(ord,curr,false);
+            tui.write(ordinal,curr,false);
         } else {
-            ord=0;
+            ordinal=0;
             it = highScores.iterator();
-            showNextHighscore(it,ord);
+            ordinal = showNextHighscore(it,ordinal);
         }
+        return ordinal;
     }
 
     // initiates the model
