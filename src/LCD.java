@@ -2,9 +2,10 @@ import isel.leic.utils.Time;
 
 public class LCD { // Escreve no LCD usando a interface a 8 bits.
     public static final int LINES = 2, COLS = 16; // Dimensão do display.
-    private static final String GUNSHIP ="\u0000";
-    private static final String HUMANSHIP ="\u0001";
-    private static final String ALIANSHIP ="\u0002";
+    public static final String GUNSHIP ="\u0001";
+    public static final String HUMANSHIP ="\u0002";
+    public static final String ALIANSHIP ="\u0003";
+
     public static void main(String[] args) {
 
         HAL.init();
@@ -12,22 +13,22 @@ public class LCD { // Escreve no LCD usando a interface a 8 bits.
         init();
         //write('A');
         write("0123456789ABCDEF");
-        cursor(0,5);
+        SetcursorPosition(0,5);
         write("teste");
-        cursor(1,5);
+        SetcursorPosition(1,5);
         write(GUNSHIP + " " + HUMANSHIP+" " + ALIANSHIP+" " +ALIANSHIP);
-cursorBlink(false);
+        SetCursorBlink(false);
         while (true){
-            cursor(0,2);
+            SetcursorPosition(0,2);
             write("M");
             Time.sleep(1000);
-            cursor(0,2);
-            write("\u0003");
-            Time.sleep(150);
-            cursor(0,2);
+            SetcursorPosition(0,2);
             write("\u0004");
             Time.sleep(150);
-            cursor(0,2);
+            SetcursorPosition(0,2);
+            write("\u0005");
+            Time.sleep(150);
+            SetcursorPosition(0,2);
             write(" ");
             Time.sleep(1000);
         }
@@ -85,18 +86,12 @@ cursorBlink(false);
         writeDATA((int) c);
     }
 
-    // Escreve um caráter na posição corrente.
-    public static void writeFinalPos(char c,int linFinal,int colFinal) {
-        cursorBlink(false);
-        writeDATA((int) c);
-        cursor(linFinal,colFinal);
-        cursorBlink(true);
-    }
+
     public static void writeAT(char c,int linAT,int colAT) {
-        cursorBlink(false);
-        cursor(linAT,colAT);
+        SetCursorBlink(false);
+        SetcursorPosition(linAT,colAT);
         writeDATA((int) c);
-        cursorBlink(true);
+        SetCursorBlink(true);
     }
     // Escreve uma string na posição corrente.
     public static void write(String txt) {
@@ -106,21 +101,17 @@ cursorBlink(false);
     }
 
     // Envia comando para posicionar cursor (‘lin’:0..LINES-1 , ‘col’:0..COLS-1)
-    public static void cursor(int lin, int col) {
+    public static void SetcursorPosition(int lin, int col) {
         if (lin>LINES-1 || col>COLS-1)
             return;
         writeCMD(0x80+ (lin==1?0x40:0x0) +col );//0x80 - set cursor cmd; line 0= 0x0; line 1 =0x40;
     }
-    public static void cursorBlink(boolean blink) {
+    public static void SetCursorBlink(boolean blink) {
         writeCMD(blink?0xF:0xC);
     }
 
-    public static void ClearLCD(){
-        writeCMD(0b00000001);
-    }
-
     private static void CreateSpecialChars(){
-        SendSpecialChar(0, new int[]{
+        SendSpecialChar(1, new int[]{
                 0b00000111, //7
                 0b00001000, //8
                 0b00011110, //30
@@ -130,7 +121,7 @@ cursorBlink(false);
                 0b00000111, //7
                 0b00000000  //0
                 });
-        SendSpecialChar(1, new int[]{
+        SendSpecialChar(2, new int[]{
                 0b00011110, //30
                 0b00011000, //24
                 0b00011100, //28
@@ -140,7 +131,7 @@ cursorBlink(false);
                 0b00011110, //30
                 0b00000000  //0
                 });
-        SendSpecialChar(2, new int[]{
+        SendSpecialChar(3, new int[]{
                 0b00011111, //31
                 0b00011111, //31
                 0b00010101, //21
@@ -151,7 +142,7 @@ cursorBlink(false);
                 0b00000000  //0
         });
 
-        SendSpecialChar(3, new int[]{
+        SendSpecialChar(4, new int[]{
                 0b00000000, //0
                 0b00001010, //5
                 0b00001010, //5
@@ -162,7 +153,7 @@ cursorBlink(false);
                 0b00000000  //0
         });
 
-        SendSpecialChar(4, new int[]{
+        SendSpecialChar(5, new int[]{
                 0b00010101, //21
                 0b00010101, //21
                 0b00001010, //10

@@ -12,13 +12,12 @@ public class KBD { // Ler teclas. Métodos retornam ‘0’..’9’,’A’..�
         //LCD.write(' ');
     }
 
-    public static final char NONE = 0;
     private static int KVAL_MASK = 0x10;
     private static int ACK_MASK = 0x80;
     private static int KBD_MASK = 0x0F;
-    public static char[] keyboard;
-    public static char[] keyboard_hard = {'1', '4','7','*','2','5','8','0','3','6','9','#',0,0,0,0};
-    public static char[] keyboard_simul ={'1', '2','3','4','5','6','7','8','9','*','0','#',0,0,0,0};
+    private static char[] keyboard;
+    private static char[] keyboard_hard = {'1', '4','7','*','2','5','8','0','3','6','9','#',0,0,0,0};
+    private static char[] keyboard_simul ={'1', '2','3','4','5','6','7','8','9','*','0','#',0,0,0,0};
 
     // Inicia a classe
     public static void init(){

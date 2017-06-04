@@ -4,9 +4,6 @@
  *  virtualiza o acesso ao sistema usbport*/
 import isel.leic.UsbPort;
 public class HAL {
-    static int lastval;
-    public static boolean simul=true;
-
     public static void main(String[] args) {
         init();
         readBits(8);
@@ -27,6 +24,9 @@ public class HAL {
         }*/
 
     }
+
+    private static int lastval;
+    public static boolean simul=true;
 
     public static void init(){
         lastval=0x0;

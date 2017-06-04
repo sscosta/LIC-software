@@ -1,3 +1,5 @@
+import java.security.PublicKey;
+
 public class TUI {
     public static void main(String[] args) {
         HAL.init();
@@ -19,22 +21,24 @@ public class TUI {
     private static final char DOWN_ARROW = '8';
     private static final char DELETE_KEY = '*';
 
+    private static final String SCORETXT="SCORE:";
+
     public void init(){
         HAL.init();
         SerialEmitter.init();
         SoundGenerator.init();
         LCD.init();
-        LCD.cursor(0,0);
+        LCD.SetcursorPosition(0,0);
     }
 
     public static String getString(int size,int linStart, int colStart) {
         char[] sarry = new char[size];
 
         int pos = 0;
-        LCD.cursor(linStart, colStart + pos);
+        LCD.SetcursorPosition(linStart, colStart + pos);
 
         sarry[0] = 'A';
-        LCD.writeFinalPos(sarry[0], linStart, colStart + pos);
+        writeFinalPos(sarry[0], linStart, colStart + pos);
 
         char keyPressed = 0;
 
@@ -47,48 +51,48 @@ public class TUI {
                 case RIGHT_ARROW:
                     if (pos < size - 1) {
                         pos++;
-                        LCD.cursor(linStart, colStart + pos);
+                        LCD.SetcursorPosition(linStart, colStart + pos);
                     }
                     if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
                         sarry[pos] = 'A';
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                        writeFinalPos(sarry[pos], linStart, colStart + pos);
                     }
                     break;
 
                 case LEFT_ARROW:
                     if (pos > 0) {
                         pos--;
-                        LCD.cursor(linStart, colStart + pos);
+                        LCD.SetcursorPosition(linStart, colStart + pos);
                     }
                     break;
 
                 case UP_ARROW:
                     if (sarry[pos] < 'A' || sarry[pos] >= 'Z') {
                         sarry[pos] = 'A';
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                        writeFinalPos(sarry[pos], linStart, colStart + pos);
                     } else if (sarry[pos] < 'Z') {
                         sarry[pos]++;
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                        writeFinalPos(sarry[pos], linStart, colStart + pos);
                     }
                     break;
 
                 case DOWN_ARROW:
                     if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
                         sarry[pos] = 'A';
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                        writeFinalPos(sarry[pos], linStart, colStart + pos);
                     } else if (sarry[pos] == 'A') {
                         sarry[pos] = 'Z';
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                        writeFinalPos(sarry[pos], linStart, colStart + pos);
                     } else if (sarry[pos] > 'A') {
                         sarry[pos]--;
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                        writeFinalPos(sarry[pos], linStart, colStart + pos);
                     }
                     break;
 
                 case DELETE_KEY:
                     if (pos == size - 1 || (pos > 0 && sarry[pos + 1] == 0)) {
                         sarry[pos] = 0;
-                        LCD.writeFinalPos(sarry[pos], linStart, colStart + (--pos));
+                        writeFinalPos(sarry[pos], linStart, colStart + (--pos));
                     }
                     break;
             }
@@ -98,39 +102,42 @@ public class TUI {
     }
 
 
-
-    public char getRandomNum() {
-        return (char) ((int)(Math.random() * 9)+48);
+    // Escreve um caráter na posição corrente e define posição final.
+    public static void writeFinalPos(char c,int linFinal,int colFinal) {
+        LCD.SetCursorBlink(false);
+        LCD.write(c);
+        LCD.SetcursorPosition(linFinal,colFinal);
+        LCD.SetCursorBlink(true);
     }
 
-    public char getKey(){
-        return KBD.getKey();
-    }
+
     public void write(String str, boolean cursor){
-        cursorBlink(cursor);
+        LCD.SetCursorBlink(cursor);
         LCD.write(str);
     }
+  /*
     int writeFrom (int l,int col, String str){
         int ret= 16-col-str.length();
         if(ret<0) return -1;
-        LCD.cursor (l,col);
+        LCD.SetcursorPosition (l,col);
         LCD.write(str);
         return ret;
     }
     int writeFrom(int l, int col, char c){
         int ret= 16-col-1;
         if(ret<0) return -1;
-        LCD.cursor(l,c);
+        LCD.SetcursorPosition(l,c);
         LCD.write(c);
         return ret;
     }
+    */
     void setCursorToLine(int l){
-        LCD.cursor(l,0);
+        LCD.SetcursorPosition(l,0);
     }
 
     void write (String text, int line, int col,boolean cursor){
-        cursorBlink(cursor);
-        LCD.cursor(line,col);
+        LCD.SetCursorBlink(cursor);
+        LCD.SetcursorPosition(line,col);
         LCD.write(text);
     }
     void write (int ordinal,HighScore sc,boolean cursor){
@@ -140,7 +147,26 @@ public class TUI {
         write(str,cursor);
     }
 
-    void cursorBlink(boolean blink){
-        LCD.cursorBlink(blink);
+ /*   void SetCursorBlink(boolean blink){
+        LCD.SetCursorBlink(blink);
     }
+*/
+    public static char getKey(){
+        return KBD.getKey();
+    }
+
+    public static char waitKey(long timeout) {
+        return KBD.waitKey(timeout);
+    }
+
+    public static void PrintScoreText(){
+        LCD.SetcursorPosition(1,0);
+        LCD.write(SCORETXT);
+    }
+    public static void PrintScore(int score){
+        LCD.SetcursorPosition(1,SCORETXT.length()+1);
+        LCD.write(""+score);
+    }
+
+
 }
