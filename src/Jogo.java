@@ -30,9 +30,9 @@ public class Jogo {
 
     public  void init()
     {
-        LCD.cursorBlink(false);
+        LCD.SetCursorBlink(false);
         timeAlien = System.currentTimeMillis();
-        LCD.cursor(0,0);
+        LCD.SetcursorPosition(0,0);
         writeMissile(missile,0,0);
         writeBug(bug,0,1,columnStart);
         writeString(new String(alienTrain),0,2,columnStart);
@@ -41,7 +41,7 @@ public class Jogo {
     }
 
     private static void writeBug(char i, int line, int column, int columnStart) {
-        LCD.cursor(line,column);
+        LCD.SetcursorPosition(line,column);
         LCD.write(i);
     }
 
@@ -115,14 +115,14 @@ public class Jogo {
     public void writeString(String a,int line, int column,int size)
     {
 
-        LCD.cursor(line,column);
+        LCD.SetcursorPosition(line,column);
         LCD.write(a);
 
     }
 
     public void writeMissile(char a,int line, int column)
     {
-        LCD.cursor(line,column);
+        LCD.SetcursorPosition(line,column);
         LCD.write(a);
         //LCD.cursor(line,column);
 
