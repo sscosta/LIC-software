@@ -30,6 +30,7 @@ public class Jogo {
 
     public  void init()
     {
+        LCD.cursorBlink(false);
         timeAlien = System.currentTimeMillis();
         LCD.cursor(0,0);
         writeMissile(missile,0,0);
@@ -113,7 +114,7 @@ public class Jogo {
 
     public void writeString(String a,int line, int column,int size)
     {
-        
+
         LCD.cursor(line,column);
         LCD.write(a);
 
