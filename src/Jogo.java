@@ -7,18 +7,19 @@ public class Jogo {
 
 
 
-    private static char missile = '1';
-    private static char SHOT_KEY = '*';
-    private static char bug = '1';
-    private static int upper_alien_number = 9;
-    private static int lower_alien_number = 0;
-    private static int numberOfAliens = 1;
-    private static char alien_incoming = (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number+48);
-    private static int columnStart = 16;
-    private static char [] writeInFirstLineScreen = {missile,bug,0,0,0,0,0,0,0,0,0,0,0,0,0,alien_incoming};
-    private static char [] alienTrain = {0,0,0,0,0,0,0,0,0,0,0,0,0,alien_incoming};
-    private static int score= 0;
-    private static String writeInSecondLineScreen = "Score:"+score;
+    private char missile = '1';
+    private char SHOT_KEY = '*';
+    private char bug = '1';
+    private int upper_alien_number = 9;
+    private int lower_alien_number = 0;
+    private int numberOfAliens = 1;
+    private char alien_incoming = (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number+48);
+    private int columnStart = 16;
+    private char [] alienTrain = {0,0,0,0,0,0,0,0,0,0,0,0,0,alien_incoming};
+    private int score= 0;
+    private String writeInSecondLineScreen = "Score:"+score;
+
+    private long timeAlien;
 
     public Jogo()
     {
@@ -27,21 +28,26 @@ public class Jogo {
     }
 
 
-    public static void init()
+    public  void init()
     {
-
-        LCD.SetcursorPosition(0,0);
-        writeString(new String(writeInFirstLineScreen),0,0,columnStart);
-        writeString(writeInSecondLineScreen,1,0,columnStart);
+        LCD.cursorBlink(false);
+        timeAlien = System.currentTimeMillis();
+        LCD.cursor(0,0);
+        writeMissile(missile,0,0);
+        writeBug(bug,0,1,columnStart);
+        writeString(new String(alienTrain),0,2,columnStart);
         Time.sleep(2000);
 
     }
 
-    public static void generateGame()
+    private static void writeBug(char i, int line, int column, int columnStart) {
+        LCD.cursor(line,column);
+        LCD.write(i);
+    }
+
+    public  void generateGame()
     {
-
         char keyPressed =0;
-
         while(true) {                       // condiçao sera ate caracter chegar à nave
             keyPressed = KBD.getKey();
             if(keyPressed != 0) {
@@ -50,54 +56,42 @@ public class Jogo {
                 else if (keyPressed != '#')
                     updateView(keyPressed);
             }
-            addAlienToArray(alienTrain);
-            ++numberOfAliens;
-            addAlienToTrain(writeInFirstLineScreen, alienTrain);
-            writeString(new String(writeInFirstLineScreen), 0, 0, columnStart);
-            Time.sleep(2000);
+            if(System.currentTimeMillis()-timeAlien> 2000) {
+                timeAlien = System.currentTimeMillis();
+                addAlienToArray(alienTrain);
+                ++numberOfAliens;
+                writeString(new String(alienTrain), 0, 2, columnStart);
+            }
+
         }
     }
 
-    private static void shoot(char key) {
+    private void shoot(char key) {
 
-        for (int i = 2; i <writeInFirstLineScreen.length ; i++) {
-            if(writeInFirstLineScreen[i] != 0)
-                if(missile == writeInFirstLineScreen[i]) {
-                    writeInFirstLineScreen[i] = 0;
-                    alienTrain[i-2] = 0;
-                    updateViewAfterShoot();
+        for (int i = 2; i <alienTrain.length ; i++) {
+            if(alienTrain[i] != 0)
+                if(missile == alienTrain[i]) {
+                    alienTrain[i] = 0;
+
                     updateScore();
                     break;
                 }
         }
     }
 
-    private static void updateViewAfterShoot() {
-        writeString(new String(writeInFirstLineScreen),0,0,columnStart);
 
-    }
-
-    private static void updateScore() {
+    private void updateScore() {
         ++score;
         writeString(writeInSecondLineScreen,1,0,columnStart);
     }
 
-    private static void updateView(char key) {
+    private void updateView(char key) {
         missile =(char) (key);
-        writeInFirstLineScreen[0] = missile;
-        writeString(new String(writeInFirstLineScreen),0,0,columnStart);
+        writeMissile(missile,0,0);
     }
 
 
-    public static void addAlienToTrain(char[]writeInFirstLineScreen,char[] alienTrain)
-    {
-
-        for (int i = writeInFirstLineScreen.length-1; i >1 ; i--) {
-            writeInFirstLineScreen[i] = alienTrain[i-2];
-        }
-    }
-
-    public static void addAlienToArray(char[] train)
+    public void addAlienToArray(char[] train)
     {
         alien_incoming = generateAlienNumber();
         for (int i = 0; i <train.length; i++) {
@@ -113,18 +107,26 @@ public class Jogo {
 
 
 
-    public static char generateAlienNumber()
+    public char generateAlienNumber()
     {
         return (char)((Math.random() * (upper_alien_number- lower_alien_number)) + lower_alien_number+48);
     }
 
-    public static void writeString(String a,int line, int column,int size)
+    public void writeString(String a,int line, int column,int size)
     {
-        LCD.SetcursorPosition(line,column);
+
+        LCD.cursor(line,column);
         LCD.write(a);
 
     }
 
+    public void writeMissile(char a,int line, int column)
+    {
+        LCD.cursor(line,column);
+        LCD.write(a);
+        //LCD.cursor(line,column);
+
+    }
 
 
 }
