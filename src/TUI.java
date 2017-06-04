@@ -6,7 +6,7 @@ public class TUI {
     private static final char DOWN_ARROW = '8';
     private static final char DELETE_KEY = '*';
     private static int pos;
-
+    private static final int MAX_COLS = 16;
     public static void main(String[] args) {
         HAL.init();
         SerialEmitter.init();
@@ -104,8 +104,7 @@ public class TUI {
         return KBD.getKey();
     }
     public void write(String str, boolean cursor){
-        int cmd =cursor?0xF:0xC;
-        LCD.writeCMD(cmd);
+        enableBlinkingCursor(cursor);
         LCD.write(str);
     }
     int writeFrom (int l,int col, String str){
@@ -124,5 +123,20 @@ public class TUI {
     }
     void setCursorToLine(int l){
         LCD.cursor(l,0);
+    }
+    void write (String text, int line, int col,boolean cursor){
+        enableBlinkingCursor(cursor);
+        LCD.cursor(line,col);
+        LCD.write(text);
+    }
+    void write (int ordinal,Score sc,boolean cursor){
+        String str = ordinal/10==0?"0":"";
+        str+=ordinal+"-"+sc.getName();
+        int n = MAX_COLS - str.length();
+        write(str,cursor);
+    }
+    void enableBlinkingCursor(boolean blink){
+        int cmd =blink?0xF:0xC;
+        LCD.writeCMD(cmd);
     }
 }

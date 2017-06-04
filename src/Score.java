@@ -20,4 +20,10 @@ public class Score {
     public String toString(){
         return this.name + " " + this.points;
     }
+    public String getName(){
+        return this.name;
+    }
+    public int getPoints(){
+        return this.points;
+    }
 }

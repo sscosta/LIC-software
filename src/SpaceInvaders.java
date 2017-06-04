@@ -1,69 +1,87 @@
+import isel.leic.utils.Time;
+
 import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class SpaceInvaders {
     private static final String TITLE = " Space Invaders ";
-    private static int CREDITS;
+    private static String CREDITS;
     private static int SCORE;
     private static Scores highScores;
     private static TUI tui;
+    private static boolean COIN_INSERTED;
+
     public static void main(String[] args) {
         init();
         startMenu();
-        while(!play()){
+        while(!play()) {
+            //LOOP DO JOGO
+            //Jogo j = new Jogo();
+
 
         }
 
-
-
-    //LOOP DO JOGO
 
     }
 
     private static void startMenu() {
-        tui.write(TITLE,false);
-        tui.setCursorToLine(1);
-        highScores.add(new Score(12,"ABC"));
-        highScores.add(new Score(4,"fFC"));
-        highScores.add(new Score(6,"sfsawer"));
-        tui.write(" GAME         $"+CREDITS,false);
-        Timer t = new Timer();
-        t.scheduleAtFixedRate(new TimerTask() {
-            Iterator<Score> it = highScores.iterator();
-            @Override
-            public void run() {
+        char keyPressed=0;
+        Iterator<Score> it = highScores.iterator();
+        tui.write(TITLE,0,0, false);
+        highScores.add(new Score(12, "ABC"));
+        highScores.add(new Score(4, "fFC"));
+        highScores.add(new Score(6, "sfsawer"));
+        String game = " GAME";
+        tui.write( game,1,0, false);
+        tui.write("$ "+CREDITS,1,16-2 -CREDITS.length(),false);
+        Time.sleep(2000);
 
-                    if (it.hasNext()){
-                        Score curr = it.next();
-                        tui.setCursorToLine(1);
-                        tui.write(curr.toString(),false);
-                    }else {
-                        it = highScores.iterator();
-                        run();
-                    }
+        int ordinal=0;
+
+        while(CREDITS=="0" && (keyPressed==0 || keyPressed!='*') ) {
+            keyPressed= tui.getKey();
+            if (COIN_INSERTED){
+                CREDITS+=2;
+                tui.write(" GAME         $" + CREDITS,false);
+                Time.sleep(1000);
             }
-        }, 1000,2000);
-        while(CREDITS==0 && tui.getKey()!='*'){
-
+            if (keyPressed!=0 && keyPressed!='*')
+                showNextHighscore(it,ordinal);
+            Timer t = new Timer();
+            t.scheduleAtFixedRate(new TimerTask() {
+                @Override
+                public void run() {
+                    showNextHighscore(it,ordinal);
+                }
+            }, 1000, 2000);
         }
-        t.cancel();
+
     }
 
     private static boolean play() {
     return false;
     }
+    static void showNextHighscore(Iterator<Score> it, int ord){
 
+        if (it.hasNext()) {
+            ++ord;
+            Score curr = it.next();
+            tui.setCursorToLine(1);
+            tui.write(ord,curr,false);
+        } else {
+            ord=0;
+            it = highScores.iterator();
+            showNextHighscore(it,ord);
+        }
+    }
 
     // initiates the model
     public static void init(){
         tui= new TUI();
         tui.init();
-        CREDITS=0;
+        CREDITS="0";
         highScores = new Scores();
-    }
-
-    private static Scores LoadHighScores() {
-        return null;
+        COIN_INSERTED=false;
     }
 }
