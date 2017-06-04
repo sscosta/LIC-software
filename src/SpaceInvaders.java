@@ -48,7 +48,6 @@ public class SpaceInvaders {
         Time.sleep(2000);
 
         int beg = (int) Time.getTimeInMillis();
-        Iterator<Score> it = highScores.iterator();
         int ordinal =0;
         while(CREDITS=="0" && (keyPressed==0 || keyPressed!='*') ) {
             keyPressed= tui.getKey();
@@ -65,10 +64,10 @@ public class SpaceInvaders {
     private static boolean play() {
     return false;
     }
-    static int showNextHighscore(Iterator<Score> it, int ordinal){
+    static int showNextHighscore(Iterator<HighScore> it, int ordinal){
         if (it.hasNext()) {
             ++ordinal;
-            Score curr = it.next();
+            HighScore curr = it.next();
             tui.setCursorToLine(1);
             tui.write(ordinal,curr,false);
         } else {
