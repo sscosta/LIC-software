@@ -8,7 +8,7 @@ public class SpaceInvaders {
     private static final String TITLE = " Space Invaders ";
     private static String CREDITS;
     private static int SCORE;
-    private static Scores highScores;
+    private static HighScores highScores;
     private static TUI tui;
     private static boolean COIN_INSERTED;
 
@@ -25,12 +25,23 @@ public class SpaceInvaders {
 
     }
 
+    // initiates the model
+    public static void init(){
+        tui= new TUI();
+        tui.init();
+        CREDITS="0";
+        highScores = new HighScores();
+        COIN_INSERTED=false;
+    }
+
+
     private static void startMenu() {
         char keyPressed=0;
+        Iterator<HighScore> it = highScores.iterator();
         tui.write(TITLE,0,0, false);
-        highScores.add(new Score(12, "ABC"));
-        highScores.add(new Score(4, "fFC"));
-        highScores.add(new Score(6, "sfsawer"));
+        highScores.AddScore("ABC",12);
+        highScores.AddScore( "fFC",4);
+        highScores.AddScore( "sfsawer",6);
         String game = " GAME";
         tui.write( game,1,0, false);
         tui.write("$ "+CREDITS,1,16-2 -CREDITS.length(),false);
@@ -68,12 +79,4 @@ public class SpaceInvaders {
         return ordinal;
     }
 
-    // initiates the model
-    public static void init(){
-        tui= new TUI();
-        tui.init();
-        CREDITS="0";
-        highScores = new Scores();
-        COIN_INSERTED=false;
-    }
 }

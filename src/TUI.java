@@ -1,93 +1,23 @@
 public class TUI {
-    private static char ENTER_KEY = '5';
-    private static final char LEFT_ARROW = '4';
-    private static final char RIGHT_ARROW = '6';
-    private static final char UP_ARROW = '2';
-    private static final char DOWN_ARROW = '8';
-    private static final char DELETE_KEY = '*';
-    private static int pos;
-    private static final int MAX_COLS = 16;
     public static void main(String[] args) {
         HAL.init();
         SerialEmitter.init();
         LCD.init();
         KBD.init();
-        TUI t = new TUI();
 
-        String s =t.getString(5);
+        // LCD.ClearLCD();
+        String s =TUI.getString(5,0,6);
+
         System.out.println(s);
+
     }
 
-
-    public String getString(int size){
-        char[] sarry =new char[size];
-        pos =0;
-        for (char c: sarry) c=' ';
-        //LCD.ClearLCD();
-        char keyPressed =0;
-        boolean updated = false;
-        sarry[0]='A';
-        LCD.writeCMD(0xC);
-        LCD.write(String.valueOf(sarry));
-        LCD.cursor(0,pos);
-        LCD.writeCMD(0xF);
-        while (keyPressed!=ENTER_KEY) {
-            keyPressed=KBD.getKey();
-                switch (keyPressed) {
-                    case RIGHT_ARROW: //RIGHT_ARROW
-                        if (pos < size - 1) pos++;
-                        if (sarry[pos] < 'A' || sarry[pos] > 'Z')
-                            sarry[pos] = 'A';
-                        updated = true;
-                        break;
-
-                    case LEFT_ARROW: //LEFT_ARROW
-                        if (pos > 0) --pos;
-                        updated = true;
-                        break;
-
-                    case UP_ARROW: //UP_ARROW
-                        if (sarry[pos] < 'A' || sarry[pos] >= 'Z')
-                            sarry[pos] = 'A';
-                        else if (sarry[pos] < 'Z')
-                            sarry[pos]++;
-                        updated = true;
-                        break;
-
-                    case DOWN_ARROW: //DOWN_ARROW
-                        if (sarry[pos] < 'A' || sarry[pos] > 'Z')
-                            sarry[pos] = 'A';
-                        else if (sarry[pos] > 'A')
-                            sarry[pos]--;
-                        updated = true;
-                        break;
-
-                    case DELETE_KEY: //DELETE_KEY
-                        //if (pos==size-1) {
-                        //sarry[pos] = 0;
-                        //pos--;
-                        //updated = true;
-                        //}
-                        //else
-                        if (pos == size - 1 || (pos > 0 && sarry[pos + 1] == 0)) {
-                            sarry[pos] = 0;
-                            --pos;
-                            updated = true;
-                        }
-
-                        break;
-                }
-            if(updated) {
-                    LCD.writeCMD(0xC);
-                    LCD.cursor(0,0);
-                    LCD.write(String.valueOf(sarry));
-                    LCD.cursor(0, pos);
-                    LCD.writeCMD(0xF);
-                    updated=false;
-            }
-        }
-        return String.valueOf(sarry).trim();
-    }
+    private static final char ENTER_KEY = '5';
+    private static final char LEFT_ARROW = '4';
+    private static final char RIGHT_ARROW = '6';
+    private static final char UP_ARROW = '2';
+    private static final char DOWN_ARROW = '8';
+    private static final char DELETE_KEY = '*';
 
     public void init(){
         HAL.init();
@@ -96,6 +26,78 @@ public class TUI {
         LCD.init();
         LCD.cursor(0,0);
     }
+
+    public static String getString(int size,int linStart, int colStart) {
+        char[] sarry = new char[size];
+
+        int pos = 0;
+        LCD.cursor(linStart, colStart + pos);
+
+        sarry[0] = 'A';
+        LCD.writeFinalPos(sarry[0], linStart, colStart + pos);
+
+        char keyPressed = 0;
+
+        while (keyPressed != ENTER_KEY) {
+            keyPressed = KBD.getKey();
+
+            switch (keyPressed) {
+                case 0:
+                    break;
+                case RIGHT_ARROW:
+                    if (pos < size - 1) {
+                        pos++;
+                        LCD.cursor(linStart, colStart + pos);
+                    }
+                    if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
+                        sarry[pos] = 'A';
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                    }
+                    break;
+
+                case LEFT_ARROW:
+                    if (pos > 0) {
+                        pos--;
+                        LCD.cursor(linStart, colStart + pos);
+                    }
+                    break;
+
+                case UP_ARROW:
+                    if (sarry[pos] < 'A' || sarry[pos] >= 'Z') {
+                        sarry[pos] = 'A';
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                    } else if (sarry[pos] < 'Z') {
+                        sarry[pos]++;
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                    }
+                    break;
+
+                case DOWN_ARROW:
+                    if (sarry[pos] < 'A' || sarry[pos] > 'Z') {
+                        sarry[pos] = 'A';
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                    } else if (sarry[pos] == 'A') {
+                        sarry[pos] = 'Z';
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                    } else if (sarry[pos] > 'A') {
+                        sarry[pos]--;
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + pos);
+                    }
+                    break;
+
+                case DELETE_KEY:
+                    if (pos == size - 1 || (pos > 0 && sarry[pos + 1] == 0)) {
+                        sarry[pos] = 0;
+                        LCD.writeFinalPos(sarry[pos], linStart, colStart + (--pos));
+                    }
+                    break;
+            }
+        }
+
+        return String.valueOf(sarry).trim();
+    }
+
+
 
     public char getRandomNum() {
         return (char) ((int)(Math.random() * 9)+48);
@@ -130,14 +132,14 @@ public class TUI {
         LCD.cursor(line,col);
         LCD.write(text);
     }
-    void write (int ordinal,Score sc,boolean cursor){
+    void write (int ordinal,HighScore sc,boolean cursor){
         String str = ordinal/10==0?"0":"";
-        str+=ordinal+"-"+sc.getName();
-        int n = MAX_COLS - str.length();
+        str+=ordinal+"-"+sc.GetName();
+        int n = LCD.COLS - str.length();
         write(str,cursor);
     }
+
     void enableBlinkingCursor(boolean blink){
-        int cmd =blink?0xF:0xC;
-        LCD.writeCMD(cmd);
+        LCD.cursorBlink(blink);
     }
 }
